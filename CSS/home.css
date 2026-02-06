@@ -1,0 +1,61 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.background {
+  position: fixed;
+  top: 0;          /* fixed position from top */
+  left: 0;         /* fixed position from left */
+  width: 1920px;   /* actual image width */
+  height: 1080px;  /* actual image height */
+  background: url(../Assets/bg2.png) no-repeat top left;
+  background-size: 80% 80%; /* fill container exactly */
+  z-index: 0;
+}
+
+.icons {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* above background */
+}
+
+.icon {
+  position: absolute;        /* so you can move anywhere */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Make icons resizable */
+.icon img {
+  width: 100px;
+  height: auto;
+}
+
+/* Individual sizes */
+#icon1 img { width: 350px; } /*things icon */
+#icon2 img { width: 420px; }  /*open when icon*/
+#icon3 img { width: 640px; } /*mini game icon */
+#icon4 img { width: 300px; }  /*letter icon*/
+
+/* Hover effect */
+.icon:hover {
+  filter: drop-shadow(0 0 15px white); /* glowy effect for irregular shapes */
+  transform: scale(1.1);
+}
+
+/* Click effect */
+.icon:active {
+  filter: drop-shadow(0 0 20px white);
+  transform: scale(0.95);
+}
+
+/* Example positions (editable) */
+#icon1 { top: 70px; left: -30px; }
+#icon2 { top: 480px; left: 200px; }
+#icon3 { top: 180px; left: 700px; }
+#icon4 { top: 320px; left: 1200px; }
