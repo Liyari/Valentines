@@ -8,12 +8,12 @@ html, body {
 
 .background {
   position: fixed;
-  top: 0;          /* fixed position from top */
-  left: 0;         /* fixed position from left */
-  width: 1920px;   /* actual image width */
-  height: 1080px;  /* actual image height */
+  top: 0;          
+  left: 0;         
+  width: 1920px;   
+  height: 1080px;  
   background: url(../Assets/bg2.png) no-repeat top left;
-  background-size: 80% 80%; /* fill container exactly */
+  background-size: 80% 80%; 
   z-index: 0;
 }
 
@@ -21,41 +21,65 @@ html, body {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 10; /* above background */
+  z-index: 10; 
 }
 
 .icon {
-  position: absolute;        /* so you can move anywhere */
+  position: absolute;       
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-/* Make icons resizable */
 .icon img {
   width: 100px;
   height: auto;
 }
 
-/* Individual sizes */
 #icon1 img { width: 350px; } /*things icon */
 #icon2 img { width: 420px; }  /*open when icon*/
 #icon3 img { width: 640px; } /*mini game icon */
 #icon4 img { width: 300px; }  /*letter icon*/
 
-/* Hover effect */
 .icon:hover {
-  filter: drop-shadow(0 0 15px white); /* glowy effect for irregular shapes */
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,255,1))
+    drop-shadow(0 0 16px rgba(255,255,255,0.9));
   transform: scale(1.1);
 }
 
-/* Click effect */
 .icon:active {
-  filter: drop-shadow(0 0 20px white);
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,1))
+    drop-shadow(0 0 20px rgba(255,255,255,0.95));
   transform: scale(0.95);
 }
 
-/* Example positions (editable) */
 #icon1 { top: 70px; left: -30px; }
 #icon2 { top: 480px; left: 200px; }
 #icon3 { top: 180px; left: 700px; }
 #icon4 { top: 320px; left: 1200px; }
+
+.tooltip {
+  position: absolute;
+  bottom: 95%;          
+  left: 58%;
+  transform: translateX(-50%);
+  
+  background: rgba(255, 10, 84, 0.75);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+
+  font-size: 20px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.icon:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
