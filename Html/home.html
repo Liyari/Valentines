@@ -19,20 +19,27 @@
 			<img src="../Assets/Icons/things.png" alt="Things Icon">
 			<span class="tooltip">Why I love U</span>
 		</div>
-		<div class="icon openw" id="icon2">
-			<img src="../Assets/Icons/openw.png" alt="Openw Icon">
-			<span class="tooltip">Open When</span>
-
-		</div>
+  		<div class="icon openw" id="icon2">
+    		<img src="../Assets/Icons/openw.png" alt="Openw Icon">
+    		<span class="tooltip">Open When</span>
+  		</div>
 		<div class="icon minigame" id="icon3">
 			<img src="../Assets/Icons/game.png" alt="Game Icon">
 			<span class="tooltip">Mini Game</span>
 		</div>
-		<div class="icon letter" id="icon4">
+		<div class="icon letter" id="icon4" data-popup="../Assets/letterpop.png">
 			<img src="../Assets/Icons/letter.png" alt="Letter Icon">
 			<span class="tooltip">Letter</span>
 		</div>
 	</div>
+		<div class="modal" id="modal">
+  		<div class="modal-content">
+    		<img id="modalImage" alt="Popup Image">
+  		</div>
+		</div>
+	<audio id="clickSound" src="../Assets/clickse.mp3" preload="auto"></audio>
+	<script src="../js/popups.js"></script>
 	<script src="../js/zoom.js"></script>
+	<script src="../js/clickse.js"></script>
 </body>
 </html>

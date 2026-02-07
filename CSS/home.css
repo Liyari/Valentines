@@ -83,3 +83,42 @@ html, body {
   opacity: 1;
   transform: translateX(-50%) translateY(-4px);
 }
+
+/* ===== Modal ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 100;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ===== Popup Image ===== */
+.modal-content img {
+  max-width: 105vw;   /* 🔥 CHANGE SIZE HERE */
+  max-height: 105vh;  /* 🔥 CHANGE SIZE HERE */
+  object-fit: contain;
+  transform: scale(0.95);
+  transition: transform 0.25s ease;
+}
+
+.modal.show img {
+  transform: scale(1);
+}
+
+body, img, .icon, .modal-content {
+  user-select: none;       /* Standard */
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE/Edge */
+}
