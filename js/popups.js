@@ -33,7 +33,6 @@ icons.forEach(icon => {
   });
 });
 
-/* Close image modal */
 modal.addEventListener("click", (e) => {
   if (e.target === modal) closeImageModal();
 });
@@ -51,15 +50,10 @@ function closeImageModal() {
   modalImage.style.display = "none";
 }
 
-
-/* ===============================
-   OPEN WHEN POPUP (icon2)
-================================ */
 const openwPopup = document.getElementById("openwPopup");
 const openwGrid = document.getElementById("openwGrid");
 const openwText = document.getElementById("openwText");
 
-/* Click envelope → show text */
 openwGrid.addEventListener("click", (e) => {
   const item = e.target.closest(".openw-item");
   if (!item) return;
@@ -68,16 +62,13 @@ openwGrid.addEventListener("click", (e) => {
   openwPopup.classList.add("text-mode");
 });
 
-/* Click outside logic */
 openwPopup.addEventListener("click", (e) => {
   if (e.target !== openwPopup) return;
 
-  // If currently reading text → go back to grid
   if (openwPopup.classList.contains("text-mode")) {
     openwPopup.classList.remove("text-mode");
     openwText.textContent = "";
   } 
-  // If already on grid → close popup
   else {
     closeOpenWhen();
   }

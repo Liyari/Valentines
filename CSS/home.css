@@ -160,7 +160,6 @@ body,img,.icon,.modal-content {
   -ms-user-select: none;
 }
 
-/* ===== OPEN WHEN POPUP ===== */
 .openw-popup {
   position: fixed;
   inset: 0;
@@ -192,7 +191,6 @@ body,img,.icon,.modal-content {
   align-items: center;
 }
 
-/* GRID */
 .openw-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -211,7 +209,6 @@ body,img,.icon,.modal-content {
   margin: 0 auto 10px;
 }
 
-/* TEXT VIEW */
 .openw-text {
   display: none;
   font-size: 20px;
@@ -220,7 +217,6 @@ body,img,.icon,.modal-content {
   max-width: 600px;
 }
 
-/* MODE SWITCHING */
 .openw-popup.text-mode .openw-grid {
   display: none;
 }
