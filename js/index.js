@@ -6,14 +6,14 @@ const no = document.querySelector("#no");
 const button = document.querySelector(".buttons");
 const audio = new Audio('../Assets/soundEffect.mp3');
 const buttons = document.querySelectorAll("button");
-//button pressed condition
+
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     audio.volume = 0.3;
     audio.play();
   });
 });
-//no condition
+
 no.addEventListener("click", () =>{
     no.innerHTML = "Try Again hehe"
 
