@@ -1,21 +1,18 @@
 const clickSound = document.getElementById("clickSound");
-clickSound.volume = 0.5; // adjust volume
+clickSound.volume = 0.5;
 
 document.addEventListener("mousedown", (e) => {
-if (e.target.closest(".icon") || e.target.closest(".modal")) {
-  clickSound.currentTime = 0;
-  clickSound.play();
-}
-});
+    const clickableSelectors = [
+        ".icon",
+        ".modal",
+        ".openw-item",
+        "#openwPopup",
+        ".menu-btn",
+        "button"
+    ];
 
-document.addEventListener("mousedown", (e) => {
-  if (e.target.closest(".icon") || e.target.closest(".modal")) {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  }
-
-  if (e.target.closest(".openw-item") || e.target.closest("#openwPopup")) {
-    clickSound.currentTime = 0;
-    clickSound.play();
-  }
+    if (clickableSelectors.some(selector => e.target.closest(selector))) {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    }
 });

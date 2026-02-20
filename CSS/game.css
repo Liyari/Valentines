@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: url(../Assets/gamebg.png) center/cover no-repeat;
+  z-index: -1; /* put behind everything */
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* remove background gradient here */
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu h1 {
+    color: #ff7fa3;
+    -webkit-text-stroke: 1px #ffffff;
+    font-family: "Rubik Spray Paint", system-ui;
+    font-weight: 400;
+    margin-bottom: 30px;
+    font-size: 60px;
+}
+
+.menu-btn {
+    display: block;
+    width: 250px;
+    padding: 20px 30px;
+    margin: 15px auto;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #ff7fa3;
+    color: #fff;
+    box-shadow: 0 4px #d86a87;
+    transition: all 0.2s ease;
+}
+
+.menu-btn:hover {
+    background-color: #ff91b0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px #d86a87;
+}
+
+.menu-btn:active {
+    background-color: #ff6680;
+    transform: translateY(2px);
+    box-shadow: 0 2px #d86a87;
+}
+
+.hidden {
+  display: none;
+}
+
+#quizContainer, #rewardsContainer {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#quitBtn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,0,0,0.7);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#quitBtn:hover {
+  background: red;
+  transform: scale(1.05);
+}
+#dialogueContainer {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.character-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.character-img {
+  width: 120px;
+}
+
+.thought {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 30px;
+  max-width: 300px;
+  position: relative;
+  text-align: center;
+}
+
+/* Bubble Tail */
+.thought:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 40px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+}

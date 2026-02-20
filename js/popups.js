@@ -6,10 +6,10 @@ icons.forEach(icon => {
   icon.addEventListener("click", () => {
 
     /* icon3 → open game */
-    if (icon.id === "icon3") {
-      window.open("../Html/game.html", "_blank");
-      return;
-    }
+  if (icon.id === "icon3") {
+    window.location.href = "../Html/game.html";
+    return;
+  }
 
     /* icon2 → Open When popup */
     if (icon.id === "icon2") {

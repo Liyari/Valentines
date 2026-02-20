@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Spray+Paint&family=VT323&display=swap" rel="stylesheet">
+    <title>Mini Game</title>
+</head>
+<body>
+    <!--<audio autoplay="true" loop="true" src="../Assets/gamebgmusic.mp3"></audio>-->
+
+    <div class="background"></div>
+
+    <div class="menu" id="menu">        
+    <h1>Main Menu</h1>
+        <button class="menu-btn" onclick="startGame()">Play</button>
+        <button class="menu-btn" onclick="openRewards()">Rewards</button>
+        <button class="menu-btn" onclick="location.href='../html/home.html'">Back to Home</button>
+    </div>
+
+    <div id="dialogueContainer" class="hidden">
+        <div class="character-area">
+            <img id="characterImage" class="character-img">
+            <div id="dialogueText" class="thought"></div>
+        </div>
+
+        <div class="dialogue-buttons">
+            <button id="nextBtn" onclick="nextDialogue()">Next</button>
+            <button id="skipBtn" onclick="skipDialogue()">Skip</button>
+        </div>
+    </div>
+
+</div>
+    <div id="quizContainer" class="hidden">
+        <button id="quitBtn" onclick="quitGame()">Quit</button>
+    <h2 id="questionText"></h2>
+    <div id="choices"></div>
+    </div>
+
+    <div id="rewardsContainer" class="hidden">
+        <h2>Your Rewards</h2>
+        <div id="rewardList"></div>
+        <button onclick="goBack()">Back</button>
+    </div>
+
+    <audio id="clickSound" src="../Assets/clickse.mp3" preload="auto"></audio>
+    <script src="../js/game.js"></script>
+	<script src="../js/zoom.js"></script>
+    <script src="../js/clickse.js"></script>
+
+</body>
+</html>
