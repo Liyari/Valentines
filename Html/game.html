@@ -10,10 +10,9 @@
     <title>Mini Game</title>
 </head>
 <body>
-    <!--<audio autoplay="true" loop="true" src="../Assets/gamebgmusic.mp3"></audio>-->
-
+    <audio autoplay="true" loop="true" src="../Assets/gamebgmusic.mp3"></audio>
+    
     <div class="background"></div>
-
     <div class="menu" id="menu">        
     <h1>Main Menu</h1>
         <button class="menu-btn" onclick="startGame()">Play</button>
@@ -21,35 +20,43 @@
         <button class="menu-btn" onclick="location.href='../html/home.html'">Back to Home</button>
     </div>
 
+    <div id="quizContainer" class="hidden">
+        <h2 id="questionText"></h2>
+        <div id="choices"></div>
+    </div>
+
     <div id="dialogueContainer" class="hidden">
         <div class="character-area">
             <img id="characterImage" class="character-img">
             <div id="dialogueText" class="thought"></div>
         </div>
-
         <div class="dialogue-buttons">
-            <button id="nextBtn" onclick="nextDialogue()">Next</button>
             <button id="skipBtn" onclick="skipDialogue()">Skip</button>
+            <button id="nextBtn" onclick="nextDialogue()">Next</button>
         </div>
     </div>
 
-</div>
-    <div id="quizContainer" class="hidden">
-        <button id="quitBtn" onclick="quitGame()">Quit</button>
-    <h2 id="questionText"></h2>
-    <div id="choices"></div>
+
+    <div id="resultContainer" class="hidden">
+        <div id="scoreText"></div>
+            <img id="scoreImage" src="" alt="Score Image" style="max-width:200px; margin:20px 0;">
+        <div id="rewardText"></div>
+            <button class="menu-btn" id="backMenuBtn">Back to Menu</button>
+            <button class="menu-btn" id="playAgainBtn">Play Again</button>
     </div>
 
-    <div id="rewardsContainer" class="hidden">
-        <h2>Your Rewards</h2>
+    <div id="rewardsOverlay" class="overlay hidden">
+        <div id="rewardsPopup" class="thought rewards-popup">
+            <h2>Copy your coupon and send it to Iyah to claim 💌</h2>
         <div id="rewardList"></div>
-        <button onclick="goBack()">Back</button>
+        </div>
     </div>
+
+     <button id="quitBtn" class="hidden-btn" onclick="window.location.href='../Html/game.html'">QUIT</button>
 
     <audio id="clickSound" src="../Assets/clickse.mp3" preload="auto"></audio>
     <script src="../js/game.js"></script>
 	<script src="../js/zoom.js"></script>
     <script src="../js/clickse.js"></script>
-
 </body>
 </html>
