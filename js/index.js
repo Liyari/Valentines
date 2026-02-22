@@ -1,3 +1,10 @@
+const bgm = document.getElementById("bgm");
+
+document.addEventListener("click", () => {
+  bgm.volume = 0.4;
+  bgm.play();
+}, { once: true });
+
 const container = document.querySelector(".container");
 const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
