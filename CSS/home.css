@@ -1,39 +1,49 @@
 html, body {
   margin: 0;
-  width: 100%;
   height: 100%;
   overflow: hidden;
   font-family: 'Pixelify Sans', sans-serif;
+  background: black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.scene {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: top left;
 }
 .background {
-  position: fixed;
-  top: 0;          
-  left: 0;         
-  width: 1920px;   
-  height: 1080px;  
+  position: absolute;
+  inset: 0;
   background: url(../Assets/bg2.png) no-repeat top left;
-  background-size: 80% 80%; 
+  background-size: cover;
   z-index: 0;
 }
 .icons {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 10; 
+  position: absolute;
+  inset: 0;
+  z-index: 10;
 }
 .icon {
-  position: absolute;       
+  position: absolute;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .icon img {
-  width: 100px;
   height: auto;
+  display: block;
 }
-#icon1 img { width: 350px; } /*things icon */
-#icon2 img { width: 420px; }  /*open when icon*/
-#icon3 img { width: 640px; } /*mini game icon */
-#icon4 img { width: 300px; }  /*letter icon*/
+#icon1 img { width: 350px; }
+#icon2 img { width: 420px; }
+#icon3 img { width: 640px; }
+#icon4 img { width: 300px; }
+#icon1 { top: 70px; left: -30px; }
+#icon2 { top: 480px; left: 200px; }
+#icon3 { top: 180px; left: 700px; }
+#icon4 { top: 320px; left: 1200px; }
 .icon:hover {
   filter:
     drop-shadow(0 0 8px rgba(255,255,255,1))
@@ -46,27 +56,19 @@ html, body {
     drop-shadow(0 0 20px rgba(255,255,255,0.95));
   transform: scale(0.95);
 }
-#icon1 { top: 70px; left: -30px; }
-#icon2 { top: 480px; left: 200px; }
-#icon3 { top: 180px; left: 700px; }
-#icon4 { top: 320px; left: 1200px; }
 .tooltip {
   position: absolute;
-  bottom: 95%;          
+  bottom: 95%;
   left: 58%;
   transform: translateX(-50%);
-  
   background: rgba(255, 10, 84, 0.75);
   color: white;
   padding: 6px 10px;
   border-radius: 6px;
-
   font-size: 20px;
   white-space: nowrap;
-
   opacity: 0;
   pointer-events: none;
-
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .icon:hover .tooltip {
@@ -81,7 +83,7 @@ html, body {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  pointer-events: none; 
+  pointer-events: none;
   transition: opacity 0.25s ease;
   z-index: 100;
 }
@@ -95,47 +97,43 @@ html, body {
   justify-content: center;
 }
 .modal-content img {
-  pointer-events: none; 
+  pointer-events: none;
   transform: scale(0.95);
   transition: transform 0.25s ease;
   object-fit: contain;
 }
-#modalImage:not([src]), #modalImage[src=""] {
-  display: none;
-}
 .modal.show img {
   transform: scale(1);
 }
+#modalImage:not([src]),
+#modalImage[src=""] {
+  display: none;
+}
 .modal.mode-icon4 .modal-content img {
-  max-width: 105vw;   
-  max-height: 105vh;  
+  max-width: 105vw;
+  max-height: 105vh;
 }
 .modal.mode-icon1 {
-  align-items: center; 
-  justify-content: center; 
-  padding: 2vh 2vw; 
+  align-items: center;
+  justify-content: center;
+  padding: 2vh 2vw;
 }
 .modal.mode-icon1 .modal-content {
-  width:40%;
+  width: 40%;
   height: auto;
-  max-width: 98vw;   
-  max-height: 98vh; 
-  
-  display: block;    
-  overflow: auto;    
-  background: none; 
+  max-width: 98vw;
+  max-height: 98vh;
+  display: block;
+  overflow: auto;
+  background: none;
 }
 .modal.mode-icon1 .modal-content img {
-  width: 100%;      
-  height: auto;      
+  width: 100%;
+  height: auto;
   display: block;
 }
-.modal.mode-icon1 .modal-content::-webkit-scrollbar { display: none; }
-body,img,.icon,.modal-content {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+.modal.mode-icon1 .modal-content::-webkit-scrollbar {
+  display: none;
 }
 .openw-popup {
   position: fixed;
@@ -192,4 +190,7 @@ body,img,.icon,.modal-content {
 }
 .openw-popup.text-mode .openw-text {
   display: block;
+}
+body, img, .icon, .modal-content {
+  user-select: none;
 }
